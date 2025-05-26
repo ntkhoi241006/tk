@@ -1,24 +1,46 @@
 #include <iostream>
 using namespace std;
-int main()
+
+int main() 
 {
-    int a, b, c, d;
-    cout << "Nhap lan luot so thu nhat, hai, ba va tu: "<<endl;     
-    cin >> a>> b>> c>> d;
+    int num1, num2;
+    char operation;
+    int KQ;
 
-    int max = a;
+    cout << "Nhap so nguyen thu nhat: ";
+    cin >> num1;
+    cout << "Nhap so nguyen thu hai: ";
+    cin >> num2;
 
-    if (b > max) {
-        max = b;
-    }
-    if (c > max) {
-        max = c;
-    }
-    if (d > max) {
-        max = d;
-    }
+    cout << "Nhap phep toan (+, -, *, /): ";
+    cin >> operation;
 
-    cout << "So lon nhat la: " << max << endl;
+    switch (operation) {
+        case '+':
+            KQ = num1 + num2;
+            cout << num1 << " + " << num2 << " = " << KQ << endl;
+            break;
+        case '-':
+            KQ = num1 - num2;
+            cout << num1 << " - " << num2 << " = " << KQ << endl;
+            break;
+        case '*':
+            KQ = num1 * num2;
+            cout << num1 << " * " << num2 << " = " << KQ << endl;
+            break;
+        case '/':
+
+            if (num2 != 0) {
+                KQ = num1 / num2;
+                cout << num1 << " / " << num2 << " = " << KQ << endl;
+            } else {
+                cout << "Loi: Khong the chia cho 0!" << endl;
+            }
+            break;
+        default:
+            cout << "Phep toan khong hop le!" << endl;
+            break;
+    }
 
     return 0;
 }
